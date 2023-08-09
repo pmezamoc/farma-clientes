@@ -54,3 +54,9 @@ end
 group :production do
   gem 'pg'
 end
+
+gem "ruby-openai", "~> 4.2"
+gem "sidekiq", "~> 7.0.9"
+gem "devise" 
+gem 'hotwire-rails'
+gem 'actioncable'

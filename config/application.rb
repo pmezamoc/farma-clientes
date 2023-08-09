@@ -13,6 +13,11 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 # require "action_cable/engine"
 require "sprockets/railtie"
+require "openai"
+require "action_cable/engine"
+require 'sidekiq'
+require 'json'
+require 'securerandom'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -34,6 +39,7 @@ module FinalProject
     
     config.action_controller.default_protect_from_forgery = false
     config.active_record.belongs_to_required_by_default = false
+    config.active_job.queue_adapter = :sidekiq
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
